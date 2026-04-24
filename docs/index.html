@@ -172,33 +172,21 @@ a{text-decoration:none;color:inherit}
 }
 .hero-checks li strong{color:var(--white)}
 
-/* ======================== VSL ======================== */
-.vsl{padding:72px 0 88px;text-align:center;background:var(--bg)}
-.vsl-text{font-size:17px;color:var(--gray);margin-bottom:40px;max-width:580px;margin-left:auto;margin-right:auto;line-height:1.7}
-.vsl-wrapper{
-  max-width:740px;
-  margin:0 auto 44px;
-  position:relative;
-  border-radius:var(--radius-lg);
-  overflow:hidden;
-  border:1px solid var(--border);
-  aspect-ratio:16/9;
-  background:#000;
-  box-shadow:0 16px 64px rgba(0,0,0,.6),0 0 0 1px rgba(184,149,42,.1);
-}
-.vsl-wrapper iframe{width:100%;height:100%;border:none}
-.vsl-placeholder{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.55);cursor:pointer;transition:background var(--transition)}
-.vsl-placeholder:hover{background:rgba(0,0,0,.45)}
-.play-btn{
-  width:76px;height:76px;
-  background:var(--gold);
-  border-radius:50%;
-  display:flex;align-items:center;justify-content:center;
-  transition:transform var(--transition),box-shadow var(--transition);
-  box-shadow:0 0 0 12px rgba(184,149,42,.15);
-}
-.play-btn:hover{transform:scale(1.1);box-shadow:0 0 0 18px rgba(184,149,42,.12)}
-.play-btn::after{content:'';border-left:22px solid var(--bg);border-top:13px solid transparent;border-bottom:13px solid transparent;margin-left:5px}
+/* ======================== BENEFÍCIOS ======================== */
+.beneficios{background:var(--bg-alt)}
+.beneficios-inner{display:grid;grid-template-columns:1fr 400px;gap:64px;align-items:center}
+.beneficios-copy h2{font-size:clamp(26px,3.5vw,40px);color:var(--white);font-weight:700;line-height:1.2;margin-bottom:16px}
+.beneficios-copy h2 em{font-style:italic;color:var(--gold-light)}
+.beneficios-sub{font-size:16px;color:var(--gray);line-height:1.75;margin-bottom:36px}
+.beneficios-list{list-style:none;display:flex;flex-direction:column;gap:20px;margin-bottom:36px}
+.beneficios-list li{display:flex;align-items:flex-start;gap:14px;padding-bottom:20px;border-bottom:1px solid rgba(42,42,42,.7)}
+.beneficios-list li:last-child{border-bottom:none;padding-bottom:0}
+.bene-check{color:var(--green);font-size:22px;flex-shrink:0;margin-top:2px;filter:drop-shadow(0 0 6px rgba(34,197,94,.3))}
+.beneficios-list li strong{color:var(--white);font-size:15.5px;display:block;margin-bottom:4px}
+.beneficios-list li span{color:var(--gray);font-size:14.5px;line-height:1.65}
+.beneficios-closing{font-size:17px;font-style:italic;color:var(--offwhite);margin-bottom:32px;border-left:3px solid var(--green);padding:16px 20px;background:rgba(34,197,94,.05);border-radius:0 8px 8px 0}
+.beneficios-foto{position:relative}
+.beneficios-foto img{width:100%;object-fit:cover;border-radius:var(--radius-lg);mask-image:linear-gradient(to bottom,black 65%,transparent 100%);-webkit-mask-image:linear-gradient(to bottom,black 65%,transparent 100%)}
 
 /* ======================== DOR ======================== */
 .dor{padding:100px 0;background:var(--bg)}
@@ -577,6 +565,9 @@ a{text-decoration:none;color:inherit}
 .metodo-content-img{flex:none;max-width:260px;margin:0 auto}
 }
 @media(max-width:767px){
+.beneficios-inner{grid-template-columns:1fr}
+.beneficios-foto{order:-1;border-radius:var(--radius-lg);overflow:hidden;max-height:300px}
+.beneficios-foto img{height:300px;object-position:top center;mask-image:none;-webkit-mask-image:none}
 .hero-inner{grid-template-columns:1fr;min-height:auto;padding:0}
 .hero-foto-col{height:420px;order:-1}
 .hero-foto-col::before{background:linear-gradient(to bottom,transparent 55%,var(--bg) 100%)}
@@ -664,18 +655,47 @@ a{text-decoration:none;color:inherit}
 </div>
 </section>
 
-<!-- ==================== VSL ==================== -->
-<section class="vsl">
-<div class="container reveal">
-<p class="vsl-text">Assista ao vídeo e entenda por que sua comunicação não começa na fala, começa no corpo.</p>
-<div class="vsl-wrapper">
-<!-- Substitua pelo embed do vídeo do Luiz -->
-<div class="vsl-placeholder" id="vslPlay">
-<img src="https://res.cloudinary.com/dk58k1ler/image/upload/f_auto,q_auto/v1776291460/foto_2_gbeg1m.png" alt="Vídeo do Luiz Menezes" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.85">
-<div class="play-btn"></div>
+<!-- ==================== BENEFÍCIOS ==================== -->
+<section class="beneficios section">
+<div class="container">
+<div class="beneficios-inner reveal">
+<div class="beneficios-copy">
+<span class="badge">O que você vai conquistar</span>
+<h2>Seu corpo já sabe falar.<br><em>Você só precisa lembrá-lo.</em></h2>
+<p class="beneficios-sub">Pare de gravar 15 vezes o mesmo vídeo. Em 12 dias, 15 minutos por dia, você vai aparecer na câmera do jeito que você realmente é — com autoridade, com presença, sem travar.</p>
+<ul class="beneficios-list">
+<li>
+<span class="bene-check"><i class="ph-fill ph-check-circle"></i></span>
+<div><strong>Confiança real na frente da câmera</strong><span>Não é autoestima de palco. É o seu corpo parando de sabotar o que você quer dizer.</span></div>
+</li>
+<li>
+<span class="bene-check"><i class="ph-fill ph-check-circle"></i></span>
+<div><strong>Voz que soa como a sua</strong><span>Sem aquele tom artificial de "modo apresentação". As pessoas vão ouvir você — não uma versão engessada de você.</span></div>
+</li>
+<li>
+<span class="bene-check"><i class="ph-fill ph-check-circle"></i></span>
+<div><strong>Zero travamento no início da gravação</strong><span>Aquela trava nos primeiros 3 segundos some. Você aperta REC e flui.</span></div>
+</li>
+<li>
+<span class="bene-check"><i class="ph-fill ph-check-circle"></i></span>
+<div><strong>Presença que transmite autoridade sem forçar</strong><span>Quando o corpo está alinhado, a mensagem chega. Sem precisar parecer maior do que você é.</span></div>
+</li>
+<li>
+<span class="bene-check"><i class="ph-fill ph-check-circle"></i></span>
+<div><strong>Naturalidade que cativa — mesmo sem roteiro decorado</strong><span>Você para de depender do script para soar humano. O corpo assume o comando.</span></div>
+</li>
+<li>
+<span class="bene-check"><i class="ph-fill ph-check-circle"></i></span>
+<div><strong>Identidade que começa no corpo, não no Canva</strong><span>Sua postura, seu olhar, seu gesto — isso é sua marca. E dá para calibrar em 12 dias.</span></div>
+</li>
+</ul>
+<p class="beneficios-closing">Se você souber, mas não conseguir mostrar, você é invisível. Isso acaba agora.</p>
+<a href="https://pay.kiwify.com.br/sEyQJou" class="cta-btn">Quero destravar minha presença &rarr;</a>
+</div>
+<div class="beneficios-foto">
+<img src="https://res.cloudinary.com/dk58k1ler/image/upload/f_auto,q_auto/v1776291460/foto_2_gbeg1m.png" alt="Luiz Menezes" loading="eager">
 </div>
 </div>
-<a href="https://pay.kiwify.com.br/sEyQJou" class="cta-btn">Quero me comunicar sem travar &rarr;</a>
 </div>
 </section>
 
@@ -1001,14 +1021,6 @@ a{text-decoration:none;color:inherit}
 </div>
 
 </div>
-</div>
-</section>
-
-<!-- ==================== ATENDIMENTO ==================== -->
-<section class="atendimento">
-<div class="container reveal">
-<p>Não encontrou sua dúvida?</p>
-<a href="#" target="_blank">Fale com a equipe pelo WhatsApp &rarr;</a>
 </div>
 </section>
 
